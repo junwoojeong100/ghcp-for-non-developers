@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="클라우드베리의 접근성 검증 색상, 타이포그래피와 버튼 스타일">
+  <link rel="icon" href="data:,">
+  <title>클라우드베리 스타일 타일</title>
+  <style>
+    :root {
+      --paper: #f4e7ca;
+      --paper-light: #fff9ec;
+      --pumpkin: #a94722;
+      --pumpkin-hover: #873518;
+      --ink: #2f261f;
+      --leaf: #48563f;
+      --muted-bg: #d8ceba;
+      --muted-text: #5b5349;
+      --line: #b9aa90;
+      --shadow: rgba(47, 38, 31, 0.14);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background:
+        linear-gradient(rgba(47, 38, 31, 0.025) 1px, transparent 1px),
+        var(--paper);
+      background-size: 100% 6px;
+    }
+
+    main {
+      width: min(1080px, calc(100% - 32px));
+      margin: 32px auto;
+      overflow: hidden;
+      background: var(--paper-light);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 24px 64px var(--shadow);
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap: 32px;
+      align-items: end;
+      padding: clamp(40px, 7vw, 78px);
+      color: var(--paper-light);
+      background: var(--ink);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 700px;
+      margin: 0;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    header p:last-child {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    section {
+      padding: clamp(38px, 6vw, 64px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-heading {
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--leaf);
+      font-size: 16px;
+      font-weight: 650;
+      line-height: 1.6;
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .swatch {
+      display: flex;
+      min-height: 180px;
+      padding: 22px;
+      flex-direction: column;
+      justify-content: end;
+      border: 1px solid rgba(47, 38, 31, 0.25);
+      border-radius: 16px;
+    }
+
+    .swatch strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .swatch code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 14px;
+    }
+
+    .swatch-paper {
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    .swatch-pumpkin {
+      color: var(--paper-light);
+      background: var(--pumpkin);
+    }
+
+    .swatch-ink {
+      color: var(--paper-light);
+      background: var(--ink);
+    }
+
+    .swatch-leaf {
+      color: var(--paper-light);
+      background: var(--leaf);
+    }
+
+    .type-scale {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 20px;
+      align-items: baseline;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .type-row:last-child {
+      border-bottom: 0;
+    }
+
+    .type-label {
+      color: var(--leaf);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .type-40 {
+      font-size: 40px;
+      font-weight: 780;
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+    }
+
+    .type-32 {
+      font-size: 32px;
+      font-weight: 740;
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .type-24 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .type-18 {
+      font-size: 18px;
+      font-weight: 650;
+      line-height: 1.5;
+    }
+
+    .type-16 {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .type-14 {
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .button-card {
+      padding: 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .button-card p {
+      margin: 0 0 18px;
+      color: var(--leaf);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      padding: 0 22px;
+      align-items: center;
+      justify-content: center;
+      color: var(--paper-light);
+      font: inherit;
+      font-size: 16px;
+      font-weight: 750;
+      text-decoration: none;
+      background: var(--pumpkin);
+      border: 2px solid var(--pumpkin);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+    }
+
+    .button:hover,
+    .button-hover {
+      color: var(--paper-light);
+      background: var(--pumpkin-hover);
+      border-color: var(--pumpkin-hover);
+      transform: translateY(-2px);
+    }
+
+    .button:focus-visible {
+      outline: 4px solid var(--leaf);
+      outline-offset: 3px;
+    }
+
+    .button:disabled,
+    .button-disabled {
+      color: var(--muted-text);
+      background: var(--muted-bg);
+      border-color: var(--muted-bg);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .contrast-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .contrast-table th,
+    .contrast-table td {
+      padding: 13px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contrast-table th {
+      color: var(--paper-light);
+      background: var(--leaf);
+    }
+
+    .contrast-table td:last-child {
+      font-weight: 800;
+    }
+
+    .pass {
+      color: var(--leaf);
+    }
+
+    .note {
+      margin: 20px 0 0;
+      padding: 16px 18px;
+      color: var(--paper-light);
+      font-size: 14px;
+      line-height: 1.65;
+      background: var(--ink);
+      border-radius: 12px;
+    }
+
+    @media (max-width: 760px) {
+      main {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        border-radius: 16px;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .swatches,
+      .button-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .button-grid .button-card:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .swatches,
+      .button-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-grid .button-card:last-child {
+        grid-column: auto;
+      }
+
+      .type-row {
+        grid-template-columns: 68px 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">Cloudberry visual language</p>
+        <h1>종이의 온기와 또렷한 호박색</h1>
+      </div>
+      <p>부드러운 종이 바탕 위에 선명한 계절색을 얹고, 읽기 쉬운 시스템 글꼴로 정보를 담습니다.</p>
+    </header>
+
+    <section aria-labelledby="color-title">
+      <div class="section-heading">
+        <h2 id="color-title">색상</h2>
+        <p>장식보다 정보가 먼저 보이는 네 가지 핵심색</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch swatch-paper">
+          <strong>종이 크림</strong>
+          <code>#F4E7CA</code>
+        </div>
+        <div class="swatch swatch-pumpkin">
+          <strong>호박</strong>
+          <code>#A94722</code>
+        </div>
+        <div class="swatch swatch-ink">
+          <strong>잉크</strong>
+          <code>#2F261F</code>
+        </div>
+        <div class="swatch swatch-leaf">
+          <strong>잎 초록</strong>
+          <code>#48563F</code>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="type-title">
+      <div class="section-heading">
+        <h2 id="type-title">타입 스케일</h2>
+        <p>별도 웹폰트 없이 운영체제의 시스템 글꼴 사용</p>
+      </div>
+      <div class="type-scale">
+        <div class="type-row"><span class="type-label">40px</span><span class="type-40">가을의 첫 페이지</span></div>
+        <div class="type-row"><span class="type-label">32px</span><span class="type-32">종이와 호박 팝업</span></div>
+        <div class="type-row"><span class="type-label">24px</span><span class="type-24">새로운 문구를 먼저 만나보세요</span></div>
+        <div class="type-row"><span class="type-label">18px</span><span class="type-18">10월 10일 토요일 · 성수</span></div>
+        <div class="type-row"><span class="type-label">16px</span><span class="type-16">천천히 둘러보고 직접 만들며 마음에 드는 종이를 골라 가세요.</span></div>
+        <div class="type-row"><span class="type-label">14px</span><span class="type-14">보조 정보, 라벨과 짧은 안내 문구에 사용합니다.</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="button-title">
+      <div class="section-heading">
+        <h2 id="button-title">버튼 상태</h2>
+        <p>동작은 분명하게, 상태 변화는 색과 움직임으로 함께 표현</p>
+      </div>
+      <div class="button-grid">
+        <div class="button-card">
+          <p>기본 · 5.54:1</p>
+          <button class="button" type="button">참석 신청하기</button>
+        </div>
+        <div class="button-card">
+          <p>호버 · 7.84:1</p>
+          <button class="button button-hover" type="button">참석 신청하기</button>
+        </div>
+        <div class="button-card">
+          <p>비활성 · 4.84:1</p>
+          <button class="button button-disabled" type="button" disabled>신청 마감</button>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="contrast-title">
+      <div class="section-heading">
+        <h2 id="contrast-title">WCAG 대비 점검</h2>
+        <p>본문 크기 기준 AA 통과선 4.5:1 적용</p>
+      </div>
+      <table class="contrast-table">
+        <thead>
+          <tr>
+            <th scope="col">글자</th>
+            <th scope="col">배경</th>
+            <th scope="col">대비</th>
+            <th scope="col">결과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>잉크 #2F261F</td><td>종이 크림 #F4E7CA</td><td>12.08:1</td><td class="pass">AA 통과</td></tr>
+          <tr><td>잉크 #2F261F</td><td>밝은 종이 #FFF9EC</td><td>14.11:1</td><td class="pass">AA 통과</td></tr>
+          <tr><td>밝은 종이 #FFF9EC</td><td>호박 #A94722</td><td>5.54:1</td><td class="pass">AA 통과</td></tr>
+          <tr><td>밝은 종이 #FFF9EC</td><td>호박 호버 #873518</td><td>7.84:1</td><td class="pass">AA 통과</td></tr>
+          <tr><td>밝은 종이 #FFF9EC</td><td>잎 초록 #48563F</td><td>7.47:1</td><td class="pass">AA 통과</td></tr>
+          <tr><td>밝은 종이 #FFF9EC</td><td>잉크 #2F261F</td><td>14.11:1</td><td class="pass">AA 통과</td></tr>
+          <tr><td>비활성 글자 #5B5349</td><td>비활성 배경 #D8CEBA</td><td>4.84:1</td><td class="pass">AA 통과</td></tr>
+        </tbody>
+      </table>
+      <p class="note">기존의 더 밝은 호박색은 밝은 글자와의 대비가 부족해, 분위기를 유지하면서 AA 기준을 넘는 #A94722로 조정했습니다.</p>
+    </section>
+  </main>
+</body>
+</html>

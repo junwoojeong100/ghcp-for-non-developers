@@ -6,7 +6,7 @@
 
 **Format:** one storyline, 8 short labs, ~3 hours of core hands-on time · **Tools:** the GitHub Copilot app (Mac/Windows/Linux) · **Audience:** planners, marketers, sales & CS, HR, finance, designers, ops — anyone whose job runs on text and tables.
 
-> ✅ **Field-tested:** the core labs were executed end-to-end in the GitHub Copilot app (macOS, Aug 2026). The output images in this guide come from that verification run.
+> ✅ **Field-tested:** the labs *and* bonus labs were executed end-to-end in the GitHub Copilot app (macOS, Aug 2026). The output images in this guide — and everything in [`examples/`](examples/README.md) — come from that verification run.
 
 ---
 
@@ -141,6 +141,8 @@ Copilot is a confident drafter, not a source of truth. It can misread a number, 
 # ② Part 2 — Practice
 
 > 👉 Do the labs **top to bottom**. Type or paste each prompt block into the session's prompt box, then hit the ✅ **Checkpoint** before moving on. Your answers will differ from your neighbor's — that's how generative AI works, and the checkpoints account for it.
+>
+> 🆘 Stuck? [`examples/`](examples/README.md) holds the actual outputs from our verification run — compare the structure, don't copy the words.
 
 ## Lab 0 — Set up your workbench
 
