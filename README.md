@@ -146,12 +146,14 @@ Copilot is a confident drafter, not a source of truth. It can misread a number, 
 
 **3. Sign in:** click **Sign in to GitHub** and follow the prompts. No paid plan? **Copilot Free** is enough for this guide. (If onboarding asks you to select repositories, you can skip — we'll connect the project next.)
 
-**4. Connect this project:** click **+** next to **Sessions** in the sidebar, then under **Add project from** pick one:
+**4. Connect this project:** click **+** next to **Projects** in the sidebar, then pick one from the menu:
 
-- **Repository URL** (no other tools needed): paste `https://github.com/junwoojeong100/ghcp-for-non-developers.git` — the app clones the project for you. Note where it puts the folder.
-- **Local folder or repository:** if you already grabbed this repo (green **Code** button → **Download ZIP** → unzip somewhere easy), select that folder.
+- **Clone repository** (no other tools needed): paste `https://github.com/junwoojeong100/ghcp-for-non-developers.git` — the app clones the project for you. Note where it puts the folder.
+- **Open folder:** if you already grabbed this repo (green **Code** button → **Download ZIP** → unzip somewhere easy), select that folder.
 
-**5. Start your session:** click **+** next to **Sessions**, pick this project under **Start session in**, and in the dropdowns below the prompt box choose **Interactive** mode and the **Auto** model. If the app asks *where* to run the session, choose **your local repository** — that way everything the agent saves lands right in your folder. Then send your first request:
+*(Menu labels drift between app versions — look for the option that clones from a URL or opens a local folder.)*
+
+**5. Start your session:** click **+** next to **Projects** and pick your project under *start session in* (or click the ➕ **New session** icon on the project's row). In the dropdowns below the prompt box choose **Interactive** mode and the **Auto** model. The **Workspace** picker decides where files land: choose **your local repository** so everything the agent saves appears right in your folder. (The default, *New worktree*, works too — outputs then live in a working copy the app manages, visible via **Changes**.) Then send your first request:
 
 ```text
 Introduce yourself in two sentences. Then look at the folder structure of this
@@ -165,7 +167,7 @@ Create an empty folder called my-work in this project. All my lab outputs
 will go there.
 ```
 
-Approve when it asks. Everything you produce in Labs 1–7 lives in `my-work/`.
+If it asks for approval, approve — routine file work inside the workspace may simply proceed and report back. Everything you produce in Labs 1–7 lives in `my-work/`.
 
 ✅ **Checkpoint:** the agent replied, described `practice/` sensibly, and confirmed `my-work/` exists (want proof? ask `list the top-level folders in this project`). Stuck? See [Troubleshooting](#troubleshooting).
 
@@ -192,7 +194,7 @@ is unclear or missing in the notes, write TBD — do not invent or guess anythin
 When you're done, show me the finished minutes here in the chat too.
 ```
 
-Approve the file write when the agent asks.
+If the agent asks to approve the write, approve — it may also just save the file and tell you where it is.
 
 **3.** Read the result **against the original**. The reorder quantity was never settled — did Copilot put it under *Open Questions* (good) or state a number as fact (call it out and ask for a fix)? Notice, too, that the minutes render in the chat as real headings and tables — that's Markdown doing its job.
 
