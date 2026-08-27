@@ -6,6 +6,8 @@
 
 **Format:** one storyline, 8 short labs, ~3 hours of core hands-on time · **Tools:** the GitHub Copilot app (Mac/Windows/Linux) · **Audience:** planners, marketers, sales & CS, HR, finance, designers, ops — anyone whose job runs on text and tables.
 
+> ✅ **Field-tested:** the core labs were executed end-to-end in the GitHub Copilot app (macOS, Aug 2026). The output images in this guide come from that verification run.
+
 ---
 
 ## What you'll walk away with
@@ -76,6 +78,10 @@ Three beliefs tend to block non-developers. Let's retire them now:
 ## 2. Meet your workbench: the GitHub Copilot app
 
 Why a desktop app and not a browser chatbot? Because your **files and the AI share one place**. The GitHub Copilot app is built for *directing* AI agents: you describe work in a session, an agent reads your project's actual files, writes real files back, and asks your approval before it acts. It's free to download, runs on Mac, Windows, and Linux, and — despite being built for developers — you only need **six things**:
+
+![The GitHub Copilot app, annotated — the numbers match the table below](docs/img/app-tour.en.png)
+
+*Schematic of the real app layout (simplified; your version may differ in small ways).*
 
 | # | Thing | Where | What it's for |
 | --- | --- | --- | --- |
@@ -208,6 +214,10 @@ show me the result.
 ```
 
 ✅ **Checkpoint:** the minutes show a TL;DR and checkbox action items per owner, the reorder quantity appears as an open question or TBD — not as an invented fact — and `my-work/minutes.md` exists in your project folder.
+
+![Lab 1 output — actual minutes from the verification run](docs/img/lab1-minutes.png)
+
+*Actual `minutes.md` produced during verification (Korean edition — yours will be in your language). Note the reorder quantity: an open question, not an invented number.*
 
 💡 **Going further:** `Draft a 5-line follow-up message to the team asking owners to confirm their action items by Friday.`
 
@@ -414,6 +424,10 @@ wrong and tell me what you changed.
 ```
 
 ✅ **Checkpoint:** `invite.html` opens in your browser, survived at least two rounds of your feedback, includes the FAQ, and passed a readability check.
+
+![Lab 5 output — the invite page built by the agent during verification](docs/img/lab5-invite.png)
+
+*The actual page an agent built from this lab's brief during verification — zero HTML was written by a human.*
 
 💡 **Going further:** `Create my-work/planner.html — a product one-pager for the Desk Planner 2027 in the same style: hero, 3 feature blocks, price 18.50, "notify me" mailto button.`
 
@@ -749,6 +763,49 @@ Then list the 5 things that make an HTML email different from a web page.
 
 Open it in your browser to preview. Sending it is your email tool's job; building it no longer requires a vendor.
 
+![Bonus Lab B2 output — the email-safe newsletter from the verification run](docs/img/b2-newsletter.png)
+
+### Bonus Lab B5 — A designer's style tile
+
+Cloudberry's look currently lives in people's heads. Fix that with one brief:
+
+```text
+Create my-work/style-tile.html: Cloudberry's visual language on one page —
+color swatches (paper cream, pumpkin, ink, leaf green) with hex codes, a type
+scale from 14 to 40px using system fonts, and buttons in default/hover/disabled
+states. One self-contained file. Then check every text/background pair for
+WCAG contrast and fix any failures.
+```
+
+✅ Open it in your browser — your team now has a visual reference to point at.
+
+### Bonus Lab B6 — A finance month-end mini kit
+
+Turn Labs 3–4 into a repeatable process instead of a one-off rescue:
+
+```text
+Using @practice/en/orders.csv as the worked example, build my-work/close-kit.md:
+(1) a pre-close data checklist based on the problems we found in Lab 4,
+(2) the three formulas from Lab 3 with one test case each,
+(3) a monthly summary template with {placeholders}.
+A colleague should be able to run the close with only this file.
+```
+
+✅ The kit stands alone — no chat history required to use it.
+
+### Bonus Lab B7 — An analyst's dashboard spec
+
+The fastest way to get a dashboard built is a spec nobody can misread:
+
+```text
+From the cleaned version of @practice/en/orders.csv, draft my-work/dashboard-spec.md:
+the 3 business questions this dashboard answers, one metric per question with
+its exact formula, the chart type that fits each metric, and the data fields
+required. Explicitly flag anything this dataset cannot answer.
+```
+
+✅ Every metric traces to a question, every chart to a metric — and the dataset's limits are named.
+
 ### Bonus Lab B3 — Let the agent do the filing
 
 Your agent can act on the **whole project** — the beginning of real automation. Try:
@@ -842,6 +899,8 @@ Trust it exactly as much as a fast, tireless, occasionally overconfident new tea
 | **Model picker** | Dropdown to choose which AI model powers the session. **Auto** is fine. |
 
 ## Facilitator notes
+
+> 📋 **Print-ready:** the full pre-flight list lives in [facilitator/preflight.md](facilitator/preflight.md) — accounts at T-7, environment at T-1, room setup, timeboxes, and a plan-B ladder.
 
 Running this as a workshop? Field-tested shapes:
 
