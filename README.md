@@ -4,13 +4,13 @@
 >
 > 🇰🇷 **한국어 가이드** → [README.ko.md](README.ko.md)
 
-**Format:** one storyline, 8 short labs, ~3 hours of core hands-on time · **Tools:** VS Code + Copilot Chat (Mac/Windows) · **Audience:** planners, marketers, sales & CS, HR, finance, designers, ops — anyone whose job runs on text and tables.
+**Format:** one storyline, 8 short labs, ~3 hours of core hands-on time · **Tools:** the GitHub Copilot app (Mac/Windows/Linux) · **Audience:** planners, marketers, sales & CS, HR, finance, designers, ops — anyone whose job runs on text and tables.
 
 ---
 
 ## What you'll walk away with
 
-- A working **VS Code + Copilot** setup you actually know how to drive
+- A working **GitHub Copilot app** setup you actually know how to drive
 - The **ask → check → iterate** habit that separates "AI toy" from "AI coworker"
 - Real deliverables you built yourself: meeting minutes, a reply-template kit, working spreadsheet formulas, a cleaned dataset, a web page, and a reusable document template
 - A **role playbook** and **prompt cheat sheet** to keep using on Monday
@@ -29,7 +29,7 @@ This is one continuous document in three parts:
 
 - [① Understand](#-part-1--understand)
   - [1. Copilot is not just for programmers](#1-copilot-is-not-just-for-programmers)
-  - [2. Meet your workbench: VS Code + Copilot Chat](#2-meet-your-workbench-vs-code--copilot-chat)
+  - [2. Meet your workbench: the GitHub Copilot app](#2-meet-your-workbench-the-github-copilot-app)
   - [3. How to ask: the four-part request](#3-how-to-ask-the-four-part-request)
   - [4. How to check: you are the editor-in-chief](#4-how-to-check-you-are-the-editor-in-chief)
 - [② Practice](#-part-2--practice)
@@ -43,8 +43,9 @@ This is one continuous document in three parts:
 | --- | --- | --- |
 | A GitHub account | ✅ | Free to create at [github.com](https://github.com) |
 | GitHub Copilot access | ✅ | **Copilot Free** works for this guide (monthly limits apply). Company accounts: ask your admin. |
-| Visual Studio Code | ✅ | Free — [code.visualstudio.com](https://code.visualstudio.com) |
-| This repository | ✅ | Download ZIP or `git clone` — see Lab 0 |
+| The GitHub Copilot app | ✅ | Free download for Mac/Windows/Linux — [github.com/features/ai/github-app](https://github.com/features/ai/github-app) |
+| Git | ✅ | The app's behind-the-scenes save engine — [install guide](https://github.com/git-guides/install-git). One-time setup; you'll never type a git command. |
+| This repository | ✅ | The app clones it for you (or Download ZIP) — see Lab 0 |
 | A spreadsheet app | ⭕ optional | Excel or Google Sheets, for trying Lab 3's formulas |
 | Coding experience | ❌ | Genuinely not needed. You'll type plain English; Copilot types the technical parts. |
 
@@ -72,30 +73,31 @@ Three beliefs tend to block non-developers. Let's retire them now:
 | *"It's just a chatbot in a different window."* | Unlike a web chatbot, Copilot sits **next to your files**. It can read the actual meeting notes, edit the actual CSV, and create the actual HTML file — no copy-paste shuttling. |
 | *"AI output can't be trusted for real work."* | Correct — **unverified** output can't be. So this guide builds a checking habit into every single lab. Trust is a workflow, not a feeling. |
 
-## 2. Meet your workbench: VS Code + Copilot Chat
+## 2. Meet your workbench: the GitHub Copilot app
 
-Why VS Code and not a browser chatbot? Because your **files and the AI share one screen**. The chat can see the document you're working on, write changes into it, and create new files beside it. VS Code is free, runs on Mac and Windows, and — despite appearances — you only need **six things**:
+Why a desktop app and not a browser chatbot? Because your **files and the AI share one place**. The GitHub Copilot app is built for *directing* AI agents: you describe work in a session, an agent reads your project's actual files, writes real files back, and asks your approval before it acts. It's free to download, runs on Mac, Windows, and Linux, and — despite being built for developers — you only need **six things**:
 
 | # | Thing | Where | What it's for |
 | --- | --- | --- | --- |
-| 1 | **Explorer** | Left sidebar (📄 icon) | Your file list. Click to open a file. |
-| 2 | **Editor** | Center | Where an open file shows. Edit like any text app. |
-| 3 | **Chat panel** | `⌃⌘I` (Mac) / `Ctrl+Alt+I` (Win), or the Copilot icon up top | Where you talk to Copilot |
-| 4 | **Mode picker** | Dropdown inside the chat box | Ask / Edit / Agent — see below |
-| 5 | **Add Context** (📎 / `#`) | Inside the chat box | Point Copilot at a specific file |
-| 6 | **Save** | `⌘S` / `Ctrl+S` | A dot on the file tab = unsaved changes |
+| 1 | **Sessions** (+) | Sidebar | One session = one conversation with an agent working inside your project |
+| 2 | **Prompt box** | Bottom of a session | Where you brief the agent |
+| 3 | **Mode & model pickers** | Dropdowns below the prompt box | Interactive / Plan / Autopilot · model **Auto** is fine |
+| 4 | **`@` file reference** | Typed in the prompt box | Point the agent at a specific file (`@practice/en/orders.csv`) |
+| 5 | **Changes** | Above the prompt box | See exactly what the agent altered |
+| 6 | **Chats** | Sidebar | Quick questions that involve no files at all |
 
-Everything else can stay a mystery for now.
+Everything else — My work, Automations, Canvases — can stay a mystery for now.
 
-### The three chat modes
+### The three session modes (plus Chats)
 
 | Mode | What it does | Reach for it when… |
 | --- | --- | --- |
-| **Ask** | Answers in the chat. Touches nothing. | Questions, drafts, explanations — most of Labs 1–4 |
-| **Edit** | Proposes changes to files you choose; you review and accept/reject each one | Reworking a document you already have |
-| **Agent** | Plans multi-step work: creates files, edits several at once, asks your approval before acting | "Make me a file/page/folder" — Labs 5–7 |
+| **Interactive** | You and the agent take turns; it suggests, you steer | The default for every lab in this guide |
+| **Plan** | The agent writes a plan first; you approve it before anything runs | Bigger jobs you want to preview — try it in Lab 7 |
+| **Autopilot** | The agent runs to completion without waiting for you | Only when your brief is airtight |
+| **Chats** (sidebar) | A plain conversation — no project, no files touched | File-less questions; Lab 3 works here too |
 
-> 💡 **Rule of thumb:** *Ask* to think, *Edit* to revise, *Agent* to build. When Agent mode asks permission before creating or changing something, that's a feature — read the request, then approve.
+> 💡 **Rule of thumb:** stay in **Interactive** and let the agent do the typing. When it asks permission before creating a file or running a command, that's a feature, not friction — read the request, then approve.
 
 ## 3. How to ask: the four-part request
 
@@ -132,33 +134,42 @@ Copilot is a confident drafter, not a source of truth. It can misread a number, 
 
 # ② Part 2 — Practice
 
-> 👉 Do the labs **top to bottom**. Type or paste each prompt block into Copilot Chat, then hit the ✅ **Checkpoint** before moving on. Your answers will differ from your neighbor's — that's how generative AI works, and the checkpoints account for it.
+> 👉 Do the labs **top to bottom**. Type or paste each prompt block into the session's prompt box, then hit the ✅ **Checkpoint** before moving on. Your answers will differ from your neighbor's — that's how generative AI works, and the checkpoints account for it.
 
 ## Lab 0 — Set up your workbench
 
-> 🎯 Install, sign in, open this project, say hello · ⏱️ ~15 min
+> 🎯 Install, sign in, connect this project, say hello · ⏱️ ~15 min
 
-**1. Install VS Code** → [code.visualstudio.com](https://code.visualstudio.com/) (Download → open → done).
+**1. Install Git** → [github.com/git-guides/install-git](https://github.com/git-guides/install-git). It's the save-and-versioning engine the Copilot app uses under the hood — install once, then forget it exists.
 
-**2. Get this project onto your machine** — pick one:
+**2. Install the GitHub Copilot app** → [github.com/features/ai/github-app](https://github.com/features/ai/github-app) — download for your platform and open it.
 
-- **No-tools way:** on the repo's GitHub page, click the green **Code** button → **Download ZIP** → unzip somewhere easy (Desktop is fine).
-- **Git way:** `git clone https://github.com/junwoojeong100/ghcp-for-non-developers.git`
+**3. Sign in:** click **Sign in to GitHub** and follow the prompts. No paid plan? **Copilot Free** is enough for this guide. (If onboarding asks you to select repositories, you can skip — we'll connect the project next.)
 
-**3. Open the folder:** in VS Code, **File → Open Folder…** → select `ghcp-for-non-developers`. If asked whether you trust the authors, choose **Yes, I trust the authors** (that's what enables Copilot to work with these files).
+**4. Connect this project:** click **+** next to **Sessions** in the sidebar, then under **Add project from** pick one:
 
-**4. Sign in to Copilot:** click the **Copilot icon** (top of the window or bottom status bar) → **Set up Copilot** → sign in with your GitHub account. No paid plan? **Copilot Free** is enough for this guide.
+- **Repository URL** (no other tools needed): paste `https://github.com/junwoojeong100/ghcp-for-non-developers.git` — the app clones the project for you. Note where it puts the folder.
+- **Local folder or repository:** if you already grabbed this repo (green **Code** button → **Download ZIP** → unzip somewhere easy), select that folder.
 
-**5. Open the chat** with `⌃⌘I` (Mac) / `Ctrl+Alt+I` (Windows), make sure the mode dropdown says **Ask**, and send your first request:
+**5. Start your session:** click **+** next to **Sessions**, pick this project under **Start session in**, and in the dropdowns below the prompt box choose **Interactive** mode and the **Auto** model. If the app asks *where* to run the session, choose **your local repository** — that way everything the agent saves lands right in your folder. Then send your first request:
 
 ```text
 Introduce yourself in two sentences. Then look at the folder structure of this
 project and tell me, in plain language, what you think the practice/ folder is for.
 ```
 
-**6. Make your workspace:** in the Explorer, right-click empty space → **New Folder…** → name it `my-work`. Everything you produce in Labs 1–7 goes here.
+**6. Make your workspace** — let the agent do it:
 
-✅ **Checkpoint:** Copilot replied in chat, it described `practice/` sensibly, and `my-work/` exists in the Explorer. Stuck? See [Troubleshooting](#troubleshooting).
+```text
+Create an empty folder called my-work in this project. All my lab outputs
+will go there.
+```
+
+Approve when it asks. Everything you produce in Labs 1–7 lives in `my-work/`.
+
+✅ **Checkpoint:** the agent replied, described `practice/` sensibly, and confirmed `my-work/` exists (want proof? ask `list the top-level folders in this project`). Stuck? See [Troubleshooting](#troubleshooting).
+
+> 🧭 **Keep using this one session for all the labs.** Coming back another day, or the session feels sluggish? Start a fresh one in the same project — your files live on disk, not in the chat.
 
 ---
 
@@ -168,33 +179,33 @@ project and tell me, in plain language, what you think the practice/ folder is f
 
 **Story:** Monday, 10:47 AM. Jules from ops drops a wall of launch-meeting notes into the team channel: *"can someone make this readable before the 1pm sync?"* That someone is you.
 
-**1.** Open `practice/en/meeting-notes.txt` (click it in the Explorer). Skim it — notice the half-decisions ("300 units. or was it 200?") and buried to-dos.
+**1.** Peek at the mess first: open the project folder in Finder / File Explorer and double-click `practice/en/meeting-notes.txt` — or ask the agent: `Show me practice/en/meeting-notes.txt exactly as it is, unchanged.` Notice the half-decisions ("300 units. or was it 200?") and buried to-dos.
 
-**2.** In the chat (**Ask** mode), attach the file: click 📎 **Add Context** and pick `meeting-notes.txt` — or just drag the file from the Explorer into the chat box. Then send:
+**2.** In the prompt box, send the brief. The `@` pulls the file into context — type `@` and pick it, or just write the path:
 
 ```text
-Turn the attached notes into clean meeting minutes in Markdown with these sections:
-# Fall Launch Planning — Minutes, then Attendees / Decisions / Action Items /
-Open Questions / Parking Lot. Action Items must be a table with Owner, Task,
-Due date. Important: if a detail is unclear or missing in the notes, write TBD —
-do not invent or guess anything.
+Read @practice/en/meeting-notes.txt and turn it into clean meeting minutes in
+Markdown, saved as my-work/minutes.md. Sections: # Fall Launch Planning — Minutes,
+then Attendees / Decisions / Action Items / Open Questions / Parking Lot.
+Action Items must be a table with Owner, Task, Due date. Important: if a detail
+is unclear or missing in the notes, write TBD — do not invent or guess anything.
+When you're done, show me the finished minutes here in the chat too.
 ```
 
-**3.** Read the result **against the original**. The reorder quantity was never settled — did Copilot put it under *Open Questions* (good) or state a number as fact (call it out and ask for a fix)?
+Approve the file write when the agent asks.
 
-**4.** Save it: create a file `my-work/minutes.md` (right-click `my-work` → **New File…**), paste the minutes in, and save. *Shortcut:* switch the chat to **Agent** mode and say `Save these minutes as my-work/minutes.md` — approve when it asks.
+**3.** Read the result **against the original**. The reorder quantity was never settled — did Copilot put it under *Open Questions* (good) or state a number as fact (call it out and ask for a fix)? Notice, too, that the minutes render in the chat as real headings and tables — that's Markdown doing its job.
 
-**5.** See it rendered: with `minutes.md` open, press `⇧⌘V` (Mac) / `Ctrl+Shift+V` (Win) for the Markdown preview. Headings, table, structure — this is why Markdown beats a plain memo.
-
-**6.** Iterate — the real skill. Keep the conversation going:
+**4.** Iterate — the real skill. Keep the conversation going:
 
 ```text
 Good. Now: (1) rewrite Action Items as checkbox lists grouped by owner,
 (2) add a "TL;DR" section at the top with the 3 most important points,
-(3) keep everything else exactly as it is.
+(3) keep everything else exactly as it is. Update my-work/minutes.md and
+show me the result.
 ```
 
-✅ **Checkpoint:** the preview shows a TL;DR, checkbox action items per owner, and the reorder quantity appears as an open question or TBD — not as an invented fact.
+✅ **Checkpoint:** the minutes show a TL;DR and checkbox action items per owner, the reorder quantity appears as an open question or TBD — not as an invented fact — and `my-work/minutes.md` exists in your project folder.
 
 💡 **Going further:** `Draft a 5-line follow-up message to the team asking owners to confirm their action items by Friday.`
 
@@ -206,12 +217,13 @@ Good. Now: (1) rewrite Action Items as checkbox lists grouped by owner,
 
 **Story:** Sam from CS forwards you a message from Noah — late delivery *and* the wrong sticker pack, a three-time customer, gift ruined. Sam's note: *"Handle this one with care, and can we make a template out of it? We get this pattern weekly."*
 
-**1.** Open and read `practice/en/customer-message.txt`.
+**1.** Open and read `practice/en/customer-message.txt` (double-click it in your file manager, or ask the agent to show it unchanged).
 
-**2.** Attach it in chat (**Ask** mode) and send the four-part request:
+**2.** Send the four-part request, pointing at the file with `@`:
 
 ```text
-Draft a reply to the attached customer email. Context: we're Cloudberry Paper Co.,
+Draft a reply to the customer email in @practice/en/customer-message.txt.
+Context: we're Cloudberry Paper Co.,
 a small stationery shop; a courier mix-up caused both the delay and the wrong item.
 Format: under 150 words, include a subject line, warm and human, no corporate filler.
 Guardrails: apologize once (no over-apologizing, no blaming the courier), offer BOTH
@@ -243,7 +255,7 @@ Replace specifics with {placeholders} like {customer_name}, {order_id}, {wrong_i
 of what to verify before sending.
 ```
 
-**6.** Save the template as `my-work/cs-reply-template.md` (paste, or ask Agent mode to save it).
+**6.** Save the template: `Save that template as my-work/cs-reply-template.md` — approve the write.
 
 ✅ **Checkpoint:** your template has placeholders, a when-to-use note, and a pre-send checklist — and the original reply mentions order 1006 and both resolution options.
 
@@ -253,11 +265,11 @@ of what to verify before sending.
 
 ## Lab 3 — Spreadsheet formulas without fear
 
-> 🎯 Generate formulas from plain language, decode someone else's monster formula, and test before trusting · ⏱️ ~20 min · 🧰 chat only (spreadsheet optional)
+> 🎯 Generate formulas from plain language, decode someone else's monster formula, and test before trusting · ⏱️ ~20 min · 🧰 no files involved — a sidebar **Chat** works too
 
 **Story:** Priya maintains the inventory sheet. Her status is "on leave, do not text me formulas questions." Column layout you inherit: **A** product, **B** order date, **C** qty, **D** unit price, **E** channel.
 
-**1. Describe → formula.** In **Ask** mode:
+**1. Describe → formula.** In your session (or a fresh **Chat** from the sidebar — this lab touches no files):
 
 ```text
 I have an Excel sheet: column A product name, B order date, C quantity,
@@ -312,12 +324,12 @@ If you have Excel or Google Sheets handy, actually run one test case. Two minute
 
 **Story:** Mara wants a simple sales read-out for the launch planning: *"top products, revenue by channel, nothing fancy."* Then you open `orders.csv`. Three date formats. A duplicate row. A negative quantity. Blank cells. A city spelled four ways. Welcome to real data.
 
-**1.** Open `practice/en/orders.csv` and eyeball it. Spot three problems yourself before asking — it sharpens your review of Copilot's audit.
+**1.** Open `practice/en/orders.csv` (your file manager will hand it to Excel or a text editor — either is fine) and eyeball it. Spot three problems yourself before asking — it sharpens your review of Copilot's audit.
 
-**2. Audit first, fix second.** Attach the file and send:
+**2. Audit first, fix second.** Send:
 
 ```text
-Audit the attached CSV for data-quality problems. Do NOT fix anything yet.
+Audit @practice/en/orders.csv for data-quality problems. Do NOT fix anything yet.
 List every issue you find, grouped by column, with the affected order_id(s)
 and why it's a problem for analysis.
 ```
@@ -335,7 +347,7 @@ CSV in a code block, (2) a change log table: order_id, column, before, after,
 reason.
 ```
 
-**4.** Save the cleaned data as `my-work/orders-clean.csv` — paste into a new file, or Agent mode: `Save the cleaned CSV as my-work/orders-clean.csv`.
+**4.** Save it: `Save the cleaned CSV as my-work/orders-clean.csv` — approve the write.
 
 **5. Ask the data questions — with the math shown:**
 
@@ -357,11 +369,11 @@ every assumption you made about the excluded rows.
 
 ## Lab 5 — Your words, on a webpage
 
-> 🎯 Build and iterate a real, openable web page in Agent mode — zero HTML knowledge · ⏱️ ~25 min · 🧰 Agent mode
+> 🎯 Have your agent build — and rebuild — a real, openable web page · ⏱️ ~25 min · 🧰 zero HTML knowledge required
 
 **Story:** The "Paper & Pumpkin" pop-up needs an invite page *today*. The agency wants two weeks. Mara looks at you: *"You've got that AI thing, right?"*
 
-**1.** Switch the chat mode dropdown to **Agent**. Then send the whole brief at once:
+**1.** Stay in your session and send the whole brief at once:
 
 ```text
 Create a one-page event invite at my-work/invite.html. Single HTML file, no
@@ -374,9 +386,9 @@ Design: warm paper-and-pumpkin palette, generous whitespace, big readable type,
 must look good on a phone.
 ```
 
-Agent mode will propose creating the file — **review, then approve**.
+The agent will propose creating the file — **review, then approve**. (Curious what it wrote? Click **Changes** above the prompt box.)
 
-**2.** Open your page like a normal person: find `invite.html` in Finder / File Explorer (right-click it in VS Code → **Reveal in Finder** / **Reveal in File Explorer**) and double-click. A browser opens **your** page.
+**2.** Open your page like a normal person: find `my-work/invite.html` in your project folder (Finder / File Explorer) and double-click — a browser opens **your** page. Or ask the agent: `Open my-work/invite.html in my default browser` and approve the command.
 
 **3. Iterate in plain language.** One change per message; refresh the browser after each approval:
 
@@ -417,7 +429,7 @@ wrong and tell me what you changed.
 | **B · People** | Jules | A job post + interview kit for a part-time shop assistant (pop-ups outgrew the team) |
 | **C · Sales** | Mara | A one-page wholesale proposal for a boutique that visited the pop-up |
 
-**1. Generate the filled example first** (Ask mode). Take your track's prompt:
+**1. Generate the filled example first.** Take your track's prompt:
 
 **Track A:**
 
@@ -470,7 +482,7 @@ add a "Before you send" checklist of 5 quality questions at the bottom.
 
 ✅ **Checkpoint:** two files — one filled example that survived your critique, one placeholder template with a quality checklist.
 
-💡 **Going further:** `Critique my filled draft as a skeptical director would: list the 5 hardest questions I'd get, with a suggested answer for each.`
+💡 **Going further:** the app ships a built-in critic — type `/rubber-duck` in the prompt box and ask it to poke holes in your draft. Or cast the critic yourself: `Critique my filled draft as a skeptical director would: list the 5 hardest questions I'd get, with a suggested answer for each.`
 
 ---
 
@@ -485,7 +497,7 @@ Choose the mission closest to your real Monday (or invent your own — better!).
 | 📣 **Marketing** | Post-event thank-you email + 3 social posts + a 5-line results blurb for the team | Consistent voice across all pieces; every number traceable to Lab 4's data or marked {TBD} |
 | 📋 **Planning / PM** | A one-page FAQ + rollout note for the loyalty stamp cards (build on Lab 6A) | Covers the 5 questions staff will actually get; no invented policy — gaps say {TBD} |
 | 🎧 **CS** | A macro pack: 5 reply templates for your team's top 5 real inquiry types | Each has placeholders, a when-to-use line, and a pre-send check |
-| 🧑‍🤝‍🧑 **HR / People** | Week-1 onboarding plan for the new shop assistant (build on Lab 6B) | Day-by-day table, owner per item, works as a checklist in Markdown preview |
+| 🧑‍🤝‍🧑 **HR / People** | Week-1 onboarding plan for the new shop assistant (build on Lab 6B) | Day-by-day table, owner per item, works as a Markdown checkbox list |
 | 💰 **Finance / Ops** | A monthly sales close kit: cleaned-data checklist + 3 reusable formulas + a summary template | A colleague could run the close using only your kit |
 | 🗂️ **Your own** | The document/page/template you keep re-making at work | You'd genuinely use it next week |
 
@@ -496,6 +508,8 @@ Choose the mission closest to your real Monday (or invent your own — better!).
 3. Iterate — "keep X, change Y", one or two changes per message
 4. Extract the reusable version (template, checklist, or kit)
 5. Save it in `my-work/` — that folder is now your portfolio
+
+> 💪 Brief feeling airtight? This is the moment to try the other session modes: **Plan** (approve the plan, then let it run) or, for the brave, **Autopilot**.
 
 ✅ **Checkpoint:** one mission's Definition of Done is fully met, and you never accepted a fact you didn't check.
 
@@ -633,7 +647,7 @@ order. <copy>
 ```text
 Build my-work/style-tile.html: our palette {colors}, type scale from 14 to 40px,
 buttons in default/hover/disabled — one file, labeled swatches, openable in a
-browser. (Agent mode)
+browser.
 ```
 
 ```text
@@ -706,10 +720,10 @@ out loud.
 
 ### Bonus Lab B1 — A taste of SQL
 
-SQL is the language of "can we get the numbers" — and you now know enough to *read* it. In **Ask** mode, with `orders.csv` attached:
+SQL is the language of "can we get the numbers" — and you now know enough to *read* it. In your session:
 
 ```text
-Pretend the attached CSV is a database table called orders. Write SQL for:
+Pretend @practice/en/orders.csv is a database table called orders. Write SQL for:
 1. Revenue by product, highest first
 2. Orders per channel in August 2026
 3. Customers who ordered more than once
@@ -721,7 +735,7 @@ That last clause is the point: dirty data doesn't error, it lies. You don't need
 
 ### Bonus Lab B2 — An email that survives inboxes
 
-Web pages and HTML emails are different beasts (email clients are stuck in the past — tables and inline styles win). **Agent** mode:
+Web pages and HTML emails are different beasts (email clients are stuck in the past — tables and inline styles win). Send:
 
 ```text
 Create my-work/newsletter.html: an HTML email announcing the Paper & Pumpkin
@@ -735,7 +749,7 @@ Open it in your browser to preview. Sending it is your email tool's job; buildin
 
 ### Bonus Lab B3 — Let the agent do the filing
 
-Agent mode can act on your **whole folder** — the beginning of real automation. Try:
+Your agent can act on the **whole project** — the beginning of real automation. Try:
 
 ```text
 Look at everything inside my-work/ and create my-work/README.md: a table of
@@ -744,7 +758,26 @@ Add a "portfolio summary" paragraph at the top I could paste into a
 self-review.
 ```
 
-Watch it read, plan, and ask approval before writing. That review-approve loop is exactly how you keep automation safe while it saves you time.
+Watch it read, plan, and ask approval before writing. That review-approve loop is exactly how you keep automation safe while it saves you time. Then peek at **Automations** in the app's sidebar: the same request, saved as a task, can run on a schedule or on demand — filing that files itself.
+
+### Bonus Lab B4 — A taste of the terminal (Copilot CLI)
+
+Strictly optional, for the curious: the engine inside the Copilot app is [GitHub Copilot CLI](https://docs.github.com/copilot/concepts/agents/about-copilot-cli) — and you can drive it directly **in the terminal**, no windows at all. With Node.js 22+ installed:
+
+```bash
+npm install -g @github/copilot
+cd ghcp-for-non-developers
+copilot
+```
+
+Trust the folder when asked, then try Lab 1 without a mouse:
+
+```text
+Turn practice/en/meeting-notes.txt into Markdown minutes and save them as
+my-work/minutes-cli.md. If a detail is missing, write TBD — don't invent it.
+```
+
+It plans, asks approval, writes the file. Notice what *didn't* change: the four-part request and the verification checklist work in every Copilot surface — app, terminal, or web. Tools rotate; the briefing-and-reviewing skill is yours for good.
 
 ## The verification checklist
 
@@ -761,14 +794,15 @@ Print-worthy. Before any Copilot output leaves your hands:
 
 | Symptom | Try this |
 | --- | --- |
-| No Copilot icon in VS Code | Update VS Code (**Help → Check for Updates**), then Extensions (`⇧⌘X` / `Ctrl+Shift+X`) → search "GitHub Copilot" → Install. This repo also suggests it automatically — accept the prompt. |
-| "Sign in" loops or fails | Sign out fully (click your avatar, bottom-left) and back in. Company account? Your admin may need to enable Copilot for you. |
-| Copilot answers about the wrong file / "I don't see a file" | Attach explicitly: 📎 **Add Context** → pick the file, or drag it into the chat box. Having the file open in the editor helps too. |
-| Agent mode keeps asking for approval | Normal and good — it must ask before creating/changing files. Read, then approve. |
+| The app won't install or open | Re-download from [github.com/features/ai/github-app](https://github.com/features/ai/github-app) (Mac/Windows/Linux). Still stuck? Update your operating system and retry. |
+| "Sign in" loops or fails | Sign out from the app's settings and back in. Company account? Ask your admin — the **GitHub Copilot app** policy must be enabled (it is by default). |
+| The app complains that Git is missing | Install it from [github.com/git-guides/install-git](https://github.com/git-guides/install-git), then restart the app. You'll never touch it again. |
+| The agent talks about the wrong file / "I don't see a file" | Reference it explicitly: type `@` in the prompt box and pick the file. Also double-check the session was started in the right project. |
+| The agent keeps asking for approval | Normal and good — it must ask before creating files or running commands. Read, then approve. |
 | Replies come in the wrong language | Say `Answer in English` (or 한국어) once; it sticks for the session. |
 | "You've reached your limit" on Copilot Free | Free has monthly caps. Wait for reset, or upgrade — the labs also work fine spread across days. |
 | The response is mediocre | It's usually the request. Add the missing part: goal, context, format, or guardrails — then ask again. Regenerating without changing the ask rarely helps. |
-| Chat can't find the mode dropdown | It's inside the chat input box, bottom edge. If your VS Code looks different, update it — the UI evolves. |
+| Can't find the mode/model dropdowns | They sit just below the prompt box inside a session. If your app looks different, update it — the UI evolves. |
 
 ## FAQ
 
@@ -778,8 +812,8 @@ No — generative AI varies run to run. That's why every lab checks *properties*
 **Is my data used to train models?**
 Depends on your plan and organization settings — ask your admin, read your company's AI policy, and until then keep real customer/financial data out. The practice files here are fictional precisely so you can play freely.
 
-**Why VS Code instead of a chatbot website?**
-Files. The chat that can read your actual CSV and write an actual HTML file next to it removes the copy-paste tax — and Edit/Agent modes only exist where the files are.
+**Why a desktop app instead of a chatbot website?**
+Files, and hands. A web chatbot can only talk; the Copilot app's agent reads your actual CSV and writes an actual HTML file next to it — no copy-paste tax. You're not chatting about the work, you're directing it.
 
 **Do I need to remember any syntax?**
 No. You need the four-part request and the verification checklist. Syntax is Copilot's job; judgment is yours.
@@ -793,16 +827,17 @@ Trust it exactly as much as a fast, tireless, occasionally overconfident new tea
 | --- | --- |
 | **Repository (repo)** | A project folder that lives on GitHub. This guide is one. |
 | **Clone / Download ZIP** | Two ways to copy a repo to your computer (git-flavored / plain). |
-| **VS Code** | A free, very capable text editor. Our workbench. |
-| **Extension** | An add-on for VS Code. Copilot is one. |
+| **Git** | The versioning engine the app uses to keep work safe. Installed once, then invisible. |
+| **GitHub Copilot app** | The desktop app where you direct AI agents that work on your project's files. Our workbench. |
+| **Session** | One conversation with one agent inside one project. Lives in the app's sidebar. |
 | **Markdown (.md)** | Plain text with light symbols (`#`, `-`, `\|`) that render as headings, lists, tables. |
-| **Preview** | VS Code's rendered view of Markdown (`⇧⌘V` / `Ctrl+Shift+V`). |
+| **Changes** | The app's view showing exactly what the agent modified. |
 | **CSV** | Spreadsheet data as plain text, comma-separated. Excel opens it. |
 | **HTML** | The file format of web pages. Browsers open it. |
 | **SQL** | The language for asking databases questions. |
 | **Prompt** | The request you type. The better the brief, the better the work. |
-| **Ask / Edit / Agent** | Chat modes: answer only / propose file edits / plan-and-do with approval. |
-| **Model picker** | Dropdown to choose which AI model powers the chat. Default is fine. |
+| **Interactive / Plan / Autopilot** | Session modes: take turns / plan first, then act / run to completion. |
+| **Model picker** | Dropdown to choose which AI model powers the session. **Auto** is fine. |
 
 ## Facilitator notes
 
@@ -818,7 +853,7 @@ Running this as a workshop? Field-tested shapes:
 **Before the day (the make-or-break list):**
 
 - [ ] Every participant has a GitHub account **and confirmed Copilot access** before arriving — this is 90% of on-site failures
-- [ ] VS Code installed, or 20 extra minutes budgeted for Lab 0
+- [ ] The Copilot app **and Git** installed, or 20 extra minutes budgeted for Lab 0
 - [ ] Venue wifi allows github.com and Copilot endpoints
 - [ ] You've run all labs yourself **this week** (UIs drift) and kept screenshots of your outputs as demo insurance
 
