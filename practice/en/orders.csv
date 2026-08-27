@@ -1,0 +1,22 @@
+order_id,order_date,customer,city,product,qty,unit_price,channel
+1001,2026-08-01,Mia Torres,Seattle,Gel Pen 0.5mm,3,2.50,web
+1002,08/02/2026,Ben Okafor,portland,Dot Grid Notebook A5,1,12.00,web
+1003,2026-08-02,Hana Sato,Seattle,Washi Tape Set,2,8.90,retail
+1004,2026-08-03,Liam Chen,SEATTLE,gel pen 0.5mm,5,2.50,web
+1005,2026-08-03,Ava Nguyen,Denver,Desk Planner 2027,1,,web
+1006,Aug 4 2026,Noah Kim,Austin,Sticker Pack - Forest,4,4.25,pop-up
+1007,2026-08-05,Mia Torres,Seattle,Dot Grid Notebook A5,1,12.00,web
+1007,2026-08-05,Mia Torres,Seattle,Dot Grid Notebook A5,1,12.00,web
+1008,2026-08-05,Zoe Adler,Portland ,Washi Tape Set,-1,8.90,retail
+1009,2026-08-06,Eli Park,Chicago,Brass Ruler 15cm,2,6.75,web
+1010,2026-08-07,,Seattle,Gel Pen 0.5mm,10,2.50,web
+1011,2026-08-08,Ruth Meyer,denver,Sticker Pack - Forest,2,4.25,web
+1012,2026.08.09,Omar Haddad,Austin,Washi Tape Set,1,8.90,pop-up
+1013,2026-08-10,Grace Liu,Seattle,Desk Planner 2027,2,18.50,web
+1014,2026-08-11,Tom Baker,Chicago ,Brass Ruler 15cm,1,6.75,retail
+1015,2026-08-11,Nina Rossi,Portland,Gel Pen 0.5mm,12,2.50,web
+1016,2026-08-12,Ken Watanabe,seattle,Dot Grid Notebook A5,3,12.00,web
+1017,2026-08-13,Sara Ali,Denver,washi tape set,2,8.90,web
+1018,2026-08-14,Jack Doyle,Austin,Sticker Pack - Forest,,4.25,pop-up
+1019,2026-08-15,Lena Vogel,Seattle,Desk Planner 2027,1,18.50,web
+1020,2026-08-15,Marco Silva,Portland,Gel Pen 0.5mm,6,2.50,retail
